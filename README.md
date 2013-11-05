@@ -11,6 +11,8 @@ VIZZINI: Morons.
 A starter bot for [Battle of Bits](http://battleofbits.com), written in Python
 3 and Flask.
 
+[![Build Status](https://travis-ci.org/battleofbits/vizzini.py.png?branch=master)](https://travis-ci.org/battleofbits/vizzini.py)
+
 ## Prerequistes
 
 - A [Heroku][heroku_signup] account
