@@ -6,7 +6,7 @@ import random
 app = flask.Flask(__name__)
 
 
-@app.route("/"):
+@app.route("/")
 def blunder():
     return "Never get involved in a land war in Asia."
 
