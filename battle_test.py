@@ -1,4 +1,3 @@
-import os
 import battle
 import unittest
 import json
@@ -24,6 +23,7 @@ FOURUP_HOOK = """{
     ["","R","B","","","",""]
   ]
 }"""
+
 
 class BattleTestCase(unittest.TestCase):
 

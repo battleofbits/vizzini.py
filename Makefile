@@ -10,5 +10,6 @@ serve: venv
 	. venv/bin/activate; python battle.py
 
 test: venv
+	. venv/bin/activate; flake8 battle_test.py battle.py
 	. venv/bin/activate; python battle_test.py
 

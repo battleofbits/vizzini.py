@@ -1,6 +1,4 @@
-import os
 import flask
-import json
 import random
 
 app = flask.Flask(__name__)
