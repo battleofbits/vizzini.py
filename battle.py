@@ -5,6 +5,12 @@ import random
 
 app = flask.Flask(__name__)
 
+
+@app.route("/"):
+def blunder():
+    return "Never get involved in a land war in Asia."
+
+
 @app.route("/fourup", methods=["POST"])
 def fourup_move():
     if flask.request.json is None:
