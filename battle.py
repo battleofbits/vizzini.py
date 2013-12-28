@@ -31,6 +31,15 @@ def invite():
     if 'reject' in flask.request.args:
         return ('{"error": "I don\'t want to play"}', 400,
                 {'Content-Type': 'application/json'})
+
+    if flask.request.json is None:
+        raise ValueError("No JSON invite data found")
+
+    game = flask.request.json['game']
+    if game != 'fourup':
+        msg = '{{"error": "I don\'t know how to play {game}"}}'.format(
+            game=game)
+        return msg, 400, {'Content-Type': 'application/json'}
     return "OK, let's play"
 
 

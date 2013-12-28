@@ -40,10 +40,17 @@ class BattleTestCase(unittest.TestCase):
 
     def test_invite(self):
         headers = [('Content-Type', 'application/json')]
-        response = self.app.post('/invite', data={'game': 'fourup'},
+        response = self.app.post('/invite', data='{"game": "fourup"}',
                                  headers=headers)
         self.assertEqual(response.status_code, 200)
 
+    def test_bad_invite(self):
+        headers = [('Content-Type', 'application/json')]
+        response = self.app.post('/invite', data='{"game": "checkers"}',
+                                 headers=headers)
+        self.assertEqual(response.status_code, 400)
+        data = json.loads(response.get_data().decode('utf-8'))
+        self.assertEqual(data['error'], "I don't know how to play checkers")
 
 if __name__ == '__main__':
     unittest.main()
