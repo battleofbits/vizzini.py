@@ -29,10 +29,10 @@ def fourup_move():
 @app.route("/invite", methods=["POST"])
 def invite():
     if 'reject' in flask.request.args:
-        return '{"error": "I don\'t want to play"}', 400, {'Content-Type': 'application/json'}
+        return ('{"error": "I don\'t want to play"}', 400,
+                {'Content-Type': 'application/json'})
     return "OK, let's play"
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-

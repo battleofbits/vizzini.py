@@ -38,5 +38,12 @@ class BattleTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(move['column'], 6)
 
+    def test_invite(self):
+        headers = [('Content-Type', 'application/json')]
+        response = self.app.post('/invite', data={'game': 'fourup'},
+                                 headers=headers)
+        self.assertEqual(response.status_code, 200)
+
+
 if __name__ == '__main__':
     unittest.main()
